@@ -1,3 +1,3 @@
 test('renders learn react link', () => {
-  console.log("second test");
-});
+  console.log('second test')
+})

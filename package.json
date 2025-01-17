@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "jest -c config/jest.config.js",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint  --fix src/**/*.js",
+    "format": "prettier src/**/*.js --write. --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [
@@ -41,9 +42,18 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
+    "husky": "^9.1.7",
     "jest": "^27.5.1",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.4.2"
+  },
+  "husky": {
+    "hooks": {
+         "pre-commit": "npm run lint && npm run format"
+    }
   }
 }
