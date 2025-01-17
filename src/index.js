@@ -1,23 +1,20 @@
 import React from 'react';
-import './index.css';
-import App from './App';
 import { ChakraProvider } from '@chakra-ui/react'
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router";
+import Home from './ui/pages/home';
+import About from './ui/pages/about';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <ChakraProvider>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   </ChakraProvider>
 );
-/*
-ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-*/
+
