@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest -c config/jest.config.js",
+    "test": "jest --config jest.config.json",
     "eject": "react-scripts eject",
     "lint": "eslint  --fix src/**/*.js",
     "format": "prettier src/**/*.js --write. --config ./.prettierrc"
@@ -53,7 +53,7 @@
   },
   "husky": {
     "hooks": {
-         "pre-commit": "npm run lint && npm run format"
+      "pre-commit": "npm run lint && npm run format"
     }
   }
 }
