@@ -6,10 +6,11 @@ header{
     justify-content: space-between;
 }
 
-#header_pages a{
+.header_link{
     color: #fff;
     margin-right: 1em;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 #header_pages a:hover{
