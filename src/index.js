@@ -3,8 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import Home from './ui/pages/home'
 import About from './ui/pages/about'
-import LayoutDefault from './ui/templates/layoutdefault'
-import Header from './ui/organisms/header'
+import Pods from './ui/pages/pods'
 
 const container = document.getElementById('root')
 const root = createRoot(container)
@@ -13,8 +12,7 @@ root.render(
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='about' element={<About />} />
-      <Route path='about' element={<About />} />
-      <Route path='layout_default' element={<LayoutDefault header={<Header />} />} />
+      <Route path='pods' element={<Pods />} />
     </Routes>
   </BrowserRouter>
 )

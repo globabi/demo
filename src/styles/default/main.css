@@ -1,0 +1,17 @@
+header{
+    width: 98%; 
+    background: blue; 
+    padding: 1%; 
+    display: flex;
+    justify-content: space-between;
+}
+
+#header_pages a{
+    color: #fff;
+    margin-right: 1em;
+    text-decoration: none;
+}
+
+#header_pages a:hover{
+    text-decoration: underline;
+}
