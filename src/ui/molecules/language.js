@@ -15,7 +15,7 @@ export default function Language() {
       {(() => {
         const arr = []
         for (let i = 0; i < SUPPORTED_LANGUAGES.length; i++) {
-          arr.push(<option>{SUPPORTED_LANGUAGES[i]}</option>)
+          arr.push(<option key={i}>{SUPPORTED_LANGUAGES[i]}</option>)
         }
         return arr
       })()}

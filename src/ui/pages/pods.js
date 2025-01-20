@@ -4,7 +4,7 @@ import LayoutDefault from '../templates/layoutdefault'
 export default function Pods() {
   return (
     <div>
-      <LayoutDefault page={<a href='/pods'>Pods Page</a>} />
+      <LayoutDefault page={'Pods Page'} />
     </div>
   )
 }

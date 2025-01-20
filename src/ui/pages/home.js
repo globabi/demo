@@ -4,7 +4,7 @@ import LayoutDefault from '../templates/layoutdefault'
 export default function Home() {
   return (
     <div>
-      <LayoutDefault page={<a href='/'>Home Page</a>} />
+      <LayoutDefault page={'Home Page'} />
     </div>
   )
 }
