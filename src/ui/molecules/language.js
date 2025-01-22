@@ -1,17 +1,14 @@
 import React from 'react'
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 import { SUPPORTED_LANGUAGES } from '../../content/language/supported_languages'
 
-export default function Language() {
-  let [language, setLanguage] = useState('EN')
+Language.propTypes = {
+  func: PropTypes.any
+}
 
-  const handleChange = (e) => {
-    setLanguage(e.target.value)
-    alert(e.target.value)
-  }
-
+export default function Language({ func }) {
   return (
-    <select type='text' onChange={handleChange} value={language}>
+    <select type='text' onChange={func}>
       {(() => {
         const arr = []
         for (let i = 0; i < SUPPORTED_LANGUAGES.length; i++) {

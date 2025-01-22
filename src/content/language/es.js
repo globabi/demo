@@ -4,5 +4,6 @@ export const ES = {
   PODS: 'vainas',
   LANGUAGE: 'idioma',
   LOGIN: 'acceso',
-  LOG_OUT: 'finalizar la sesión'
+  LOG_OUT: 'finalizar la sesión',
+  FOOTER: 'pie de página'
 }

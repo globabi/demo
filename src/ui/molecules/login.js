@@ -1,9 +1,14 @@
 import React from 'react'
 import Modal from 'react-modal'
-import { EN } from '../../content/language/en'
 import { useState } from 'react'
 
-export default function Login() {
+import PropTypes from 'prop-types'
+
+Login.propTypes = {
+  text: PropTypes.string.isRequired
+}
+
+export default function Login({ text }) {
   const [modalIsOpen, setIsOpen] = useState(false)
 
   function openModal() {
@@ -17,7 +22,7 @@ export default function Login() {
   return (
     <span>
       <button onClick={openModal} style={{ marginLeft: '1em' }} href=''>
-        {EN.LOGIN}
+        {text}
       </button>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel='Example Modal'>
         <h2>Log in</h2>

@@ -3,20 +3,24 @@ import Login from '../molecules/login'
 import Language from '../molecules/language'
 import '../../styles/default/main.css'
 import HeaderLink from '../atoms/header_link'
+import PropTypes from 'prop-types'
 
-import { EN } from '../../content/language/en'
+Header.propTypes = {
+  lang: PropTypes.any,
+  func: PropTypes.any
+}
 
-export default function Header() {
+export default function Header({ lang, func }) {
   return (
     <header id='header'>
       <div id='header_pages'>
-        <HeaderLink text={EN.HOME} link='' />
-        <HeaderLink text={EN.ABOUT} link='about' />
-        <HeaderLink text={EN.PODS} link='pods' />
+        <HeaderLink text={lang.HOME} link='' />
+        <HeaderLink text={lang.ABOUT} link='about' />
+        <HeaderLink text={lang.PODS} link='pods' />
       </div>
       <div>
-        <Language />
-        <Login />
+        <Language func={func} />
+        <Login text={lang.LOGIN} />
       </div>
     </header>
   )

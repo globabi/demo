@@ -4,5 +4,6 @@ export const EN = {
   PODS: 'pods',
   LANGUAGE: 'language',
   LOGIN: 'login',
-  LOG_OUT: 'log out'
+  LOG_OUT: 'log out',
+  FOOTER: 'footer'
 }
