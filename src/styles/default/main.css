@@ -1,9 +1,15 @@
+body{
+    margin: 0;
+    padding: 0 auto;
+}
+
 header{
     width: 98%; 
-    background: blue; 
+    background: black; 
     padding: 1%; 
     display: flex;
     justify-content: space-between;
+    margin: 0;
 }
 
 .header_link{
@@ -11,8 +17,27 @@ header{
     margin-right: 1em;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 #header_pages a:hover{
     text-decoration: underline;
+}
+
+#content{
+    margin:1%;
+}
+
+footer{
+    width: 98%;
+    background: black;
+    text-align: center;
+    padding: 1%;
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-transform: uppercase;
+    font-weight: 600;
 }

@@ -8,7 +8,7 @@ Footer.propTypes = {
 
 export default function Footer({ language }) {
   return (
-    <footer style={{ width: '98%', background: 'red', textAlign: 'center', padding: '1%', color: '#fff' }}>
+    <footer>
       <div>{language.FOOTER}</div>
     </footer>
   )

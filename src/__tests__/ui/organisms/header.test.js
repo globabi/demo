@@ -5,6 +5,6 @@ import { EN } from '../../../content/language/en'
 
 describe('testing header', () => {
   test('rendering header', () => {
-    render(<Header language={EN} currentLanguage={"EN"} />)
+    render(<Header language={EN} currentLanguage={'EN'} />)
   })
 })

@@ -6,5 +6,5 @@ LayoutDefault.propTypes = {
 }
 
 export default function LayoutDefault({ page }) {
-  return <div>{page}</div>
+  return <div id='content'>{page}</div>
 }
