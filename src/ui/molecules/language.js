@@ -3,16 +3,22 @@ import PropTypes from 'prop-types'
 import { SUPPORTED_LANGUAGES } from '../../content/language/supported_languages'
 
 Language.propTypes = {
-  func: PropTypes.any
+  handleOnClick: PropTypes.any,
+  currentLanguage: PropTypes.string.isRequired
 }
 
-export default function Language({ func }) {
+export default function Language({ handleOnClick, currentLanguage }) {
   return (
-    <select type='text' onChange={func}>
+    <select type='text' onChange={(e) => handleOnClick(e.target.value)}>
       {(() => {
         const arr = []
         for (let i = 0; i < SUPPORTED_LANGUAGES.length; i++) {
-          arr.push(<option key={i}>{SUPPORTED_LANGUAGES[i]}</option>)
+          const selected = currentLanguage === SUPPORTED_LANGUAGES[i] ? 'selected' : ''
+          arr.push(
+            <option key={i} selected={selected}>
+              {SUPPORTED_LANGUAGES[i]}
+            </option>
+          )
         }
         return arr
       })()}

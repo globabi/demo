@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import Home from './ui/pages/home'
 import About from './ui/pages/about'
@@ -14,21 +14,31 @@ export default function App() {
     EN: EN,
     ES: ES
   }
-  const [lang, setLang] = React.useState(langages['EN'])
 
-  const handleChange = (e) => {
-    setLang(langages[e.target.value])
-  }
+  const DEFAULT_LANGAUGE = 'EN'
+
+  const [language, setLanguage] = useState(localStorage.getItem('language') ? localStorage.getItem('language') : DEFAULT_LANGAUGE)
+
+  useEffect(() => {
+    localStorage.setItem('language', language)
+  }, [language])
+
+  const handleSetLanguage = useCallback(
+    (newLanguage) => {
+      setLanguage(newLanguage)
+    },
+    [language]
+  )
 
   return (
     <BrowserRouter>
-      <Header lang={lang} func={handleChange} />
+      <Header language={langages[language]} currentLanguage={language} handleOnClick={handleSetLanguage} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='pods' element={<Pods />} />
       </Routes>
-      <Footer lang={lang} />
+      <Footer language={langages[language]} />
     </BrowserRouter>
   )
 }

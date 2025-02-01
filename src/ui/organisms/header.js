@@ -6,21 +6,22 @@ import HeaderLink from '../atoms/header_link'
 import PropTypes from 'prop-types'
 
 Header.propTypes = {
-  lang: PropTypes.any,
-  func: PropTypes.any
+  language: PropTypes.any,
+  handleOnClick: PropTypes.any,
+  currentLanguage: PropTypes.string.isRequired
 }
 
-export default function Header({ lang, func }) {
+export default function Header({ language, handleOnClick, currentLanguage }) {
   return (
     <header id='header'>
       <div id='header_pages'>
-        <HeaderLink text={lang.HOME} link='' />
-        <HeaderLink text={lang.ABOUT} link='about' />
-        <HeaderLink text={lang.PODS} link='pods' />
+        <HeaderLink text={language.HOME} link='' />
+        <HeaderLink text={language.ABOUT} link='about' />
+        <HeaderLink text={language.PODS} link='pods' />
       </div>
       <div>
-        <Language func={func} />
-        <Login text={lang.LOGIN} />
+        <Language handleOnClick={handleOnClick} currentLanguage={currentLanguage} />
+        <Login text={language.LOGIN} />
       </div>
     </header>
   )
