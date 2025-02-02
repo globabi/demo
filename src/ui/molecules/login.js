@@ -21,7 +21,7 @@ export default function Login({ text }) {
 
   return (
     <span>
-      <button onClick={openModal} style={{ marginLeft: '1em' }} href=''>
+      <button onClick={openModal} style={{ marginLeft: '1em' }} href='#'>
         {text}
       </button>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel='Example Modal'>

@@ -9,16 +9,11 @@ Language.propTypes = {
 
 export default function Language({ handleOnClick, currentLanguage }) {
   return (
-    <select type='text' onChange={(e) => handleOnClick(e.target.value)}>
+    <select defaultValue={currentLanguage} type='text' onChange={(e) => handleOnClick(e.target.value)}>
       {(() => {
         const arr = []
         for (let i = 0; i < SUPPORTED_LANGUAGES.length; i++) {
-          const selected = currentLanguage === SUPPORTED_LANGUAGES[i] ? 'selected' : ''
-          arr.push(
-            <option key={i} selected={selected}>
-              {SUPPORTED_LANGUAGES[i]}
-            </option>
-          )
+          arr.push(<option key={i}>{SUPPORTED_LANGUAGES[i]}</option>)
         }
         return arr
       })()}
